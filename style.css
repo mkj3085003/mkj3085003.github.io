@@ -358,6 +358,9 @@ body::after {
     padding: 20px;
 }
 
+.other-exp-card:hover {
+    box-shadow: 0 0 14px #2f4fa8;
+}
 .other-exp-header {
     display: flex;
     justify-content: space-between;
