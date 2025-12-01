@@ -398,7 +398,7 @@ body::after {
 
 .other-exp-card ul {
     margin: 0;
-    padding-left: 20px;
+    padding-left: 0px;
     color: #ddd;
     line-height: 1.5;
 }
