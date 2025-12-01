@@ -1,0 +1,468 @@
+/* ===== Global Futuristic / AI Theme ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: #0a0d14;
+    color: #e3e8f0;
+    line-height: 1.7;
+}
+
+/* Containers */
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 40px;
+}
+
+/* Navigation */
+nav {
+    background: #0e121b;
+    border-bottom: 1px solid #1f2a3a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    color: #9bbcff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #6ea8ff;
+    text-shadow: 0 0 8px #6ea8ff;
+}
+
+/* Section titles */
+h2 {
+    font-size: 1.8rem;
+    border-left: 5px solid #508CFF;
+    padding-left: 12px;
+    margin-top: 50px;
+}
+
+/* Welcome page layout */
+.welcome {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+/* Left column */
+.profile-box {
+    width: 280px;
+    text-align: center;
+}
+
+.profile-box img {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #304b85;
+    box-shadow: 0 0 12px #304b85;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-links a {
+    color: #9bbcff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    color: #6ea8ff;
+}
+
+/* Right column intro */
+.intro-text {
+    flex: 1;
+    font-size: 1.15rem;
+    opacity: 0.9;
+}
+
+/* Publication Cards */
+.pub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.pub-card {
+    background: #111722;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid #1e2a3d;
+    transition: 0.35s;
+}
+
+.pub-card:hover {
+    box-shadow: 0 0 18px #2f4fa8;
+    transform: translateY(-4px);
+}
+
+.pub-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.pub-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #b5ccff;
+}
+
+.pub-venue {
+    font-size: 0.95rem;
+    color: #6ea8ff;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    text-align: center;
+    color: #607094;
+    font-size: 0.9rem;
+}
+/* ============================= */
+/* 1. Info Block (Education etc) */
+/* ============================= */
+.info-block {
+    background: #111722;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #1e2a3d;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+.info-block:hover {
+    box-shadow: 0 0 12px #2f4fa8;
+}
+
+.info-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #b5ccff;
+}
+
+.info-sub {
+    margin-top: 4px;
+    color: #6ea8ff;
+    font-size: 1rem;
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 固定两列 */
+    gap: 22px;
+}
+
+
+.exp-row {
+    display: flex;
+    gap: 22px;
+    background: #111722;
+    padding: 18px 22px;
+    border-radius: 12px;
+    border: 1px solid #1e2a3d;
+    margin-bottom: 22px;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.exp-row:hover {
+    box-shadow: 0 0 14px #2f4fa8;
+}
+
+.exp-row img {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #0a0f18;
+    padding: 8px;
+    border: 1px solid #1e2a3d;
+}
+
+.exp-text {
+    flex: 1;
+}
+
+.exp-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #b5ccff;
+}
+
+.exp-time {
+    font-size: 0.95rem;
+    color: #6ea8ff;
+    margin: 4px 0 8px;
+}
+
+.exp-text p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, #1a2440, #080b12 70%);
+    z-index: -3;
+}
+
+/* holographic grid */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(90deg, rgba(80,130,255,0.08) 1px, transparent 1px),
+        linear-gradient(rgba(80,130,255,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* floating particles */
+.particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(100,150,255,0.7);
+    border-radius: 50%;
+    animation: float 12s infinite linear;
+}
+
+@keyframes float {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
+}
+
+
+/* ======================== */
+/* 🌐 Futuristic SVG Logos  */
+/* ======================== */
+
+.svg-logo {
+    width: 95px;
+    height: 95px;
+    padding: 10px;
+    background: rgba(20,25,40,0.7);
+    border: 1px solid #1e2a3d;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links .icon {
+    width: 18px;
+    height: 18px;
+    fill: #9bbcff;
+    opacity: 0.9;
+    transition: 0.25s;
+}
+
+.social-links a:hover .icon {
+    fill: #6ea8ff;
+    filter: drop-shadow(0 0 6px #6ea8ff);
+}
+
+.exp-title a {
+    color: inherit;      /* 继承父元素颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+.pub-links {
+    margin-top: 6px;
+}
+
+.pub-btn {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px 10px;
+    font-size: 0.85em;
+    color: #6ea8ff;
+    border: 1px solid #6ea8ff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.pub-btn:hover {
+    background: #6ea8ff;
+    color: #fff;
+}
+
+.link-btn {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-left: 8px;
+    background-color: #6ea8ff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.3s;
+}
+
+.link-btn:hover {
+    background-color: #89b4ff;
+}
+
+.other-exp-grid {
+    display: grid;
+    gap: 22px;
+    margin-top: 16px;
+}
+
+.other-exp-card {
+    background: #111722;
+    border: 1px solid #1e2a3d;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.other-exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.other-exp-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #b5ccff;
+}
+
+.other-exp-time {
+    color: #6ea8ff;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.other-exp-links a {
+    display: inline-block;
+    color: #6ea8ff;
+    text-decoration: none;
+    border: 1px solid #6ea8ff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-left: 6px;
+    font-size: 0.85rem;
+}
+
+.other-exp-links a:hover {
+    background: #6ea8ff;
+    color: #111722;
+}
+
+.other-exp-card ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+.info-card {
+    background: #111722;
+    border: 1px solid #1e2a3d;
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #b5ccff;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+.info-card b {
+    color: #6ea8ff;
+}
+
+.highlight {
+    color: #6ea8ff;
+    font-weight: 700;
+}
+.intro-text ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+.intro-text li {
+    margin-bottom: 6px;
+}
+
+.cv-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #6ea8ff, #89b4ff);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cv-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.project-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9faff;
+}
+
+.project-title {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #6ea8ff;
+}
+
+.project-desc {
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.project-links a.pub-btn {
+    margin-right: 10px;
+}

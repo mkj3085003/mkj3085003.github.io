@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kaijing Ma | Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====================== PARTICLE BACKGROUND ======================= -->
+<div class="particles">
+    <!-- generate 25 floating particles -->
+    <script>
+        for (let i=0;i<25;i++){
+            const p=document.createElement('div');
+            p.className='particle';
+            p.style.left=Math.random()*100+'%';
+            p.style.top=Math.random()*100+'%';
+            p.style.animationDelay=(Math.random()*10)+'s';
+            p.style.opacity=Math.random();
+            document.querySelector('.particles').appendChild(p);
+        }
+    </script>
+</div>
+
+<!-- ====================== NAVIGATION ======================= -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <a href="MA Kaijing-CV.pdf" target="_blank">CV</a>
+    </ul>
+</nav>
+
+<div class="container">
+
+
+<!-- ====================== WELCOME ======================= -->
+<div class="welcome" style="margin-top: -20px;">
+    <div class="profile-box" style="margin-top: 120px;">
+        <img src="assets/kaijing.jpg" alt="Profile Photo">
+
+        <div class="social-links">
+
+            <a href="https://github.com/mkj3085003">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.5 2.87 8.32 6.84 9.68.5.1.68-.22.68-.48v-1.7c-2.78.63-3.37-1.37-3.37-1.37-.46-1.2-1.14-1.52-1.14-1.52-.93-.66.07-.64.07-.64 1.03.07 1.57 1.1 1.57 1.1.91 1.6 2.38 1.14 2.96.88.09-.68.35-1.14.63-1.4-2.22-.26-4.56-1.14-4.56-5.1 0-1.14.39-2.07 1.03-2.8-.1-.26-.45-1.33.1-2.74 0 0 .84-.27 2.75 1.07A9.18 9.18 0 0 1 12 7.5c.85 0 1.7.12 2.5.34 1.9-1.34 2.75-1.07 2.75-1.07.55 1.41.2 2.48.1 2.74.64.73 1.03 1.66 1.03 2.8 0 3.98-2.35 4.83-4.6 5.08.36.32.68.94.68 1.92v2.84c0 .27.18.6.69.48A10.27 10.27 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/>
+                </svg>
+                GitHub
+            </a>
+
+            <a href="mailto:2151400@tongji.edu.cn">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v1l-10 6L2 7V6c0-1.1.9-2 2-2Zm18 5-10 6L2 9v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9Z"/>
+                </svg>
+                Email
+            </a>
+
+            <a href="https://scholar.google.com/citations?hl=zh-CN&user=0nt08kUAAAAJ">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 3 2 9l10 6 10-6-10-6Zm0 8.7L4.6 9 12 5.3 19.4 9 12 11.7Z" />
+                    <path d="M6 12.5v4.5L12 22l6-5v-4.5l-6 3.5-6-3.5Z"/>
+                </svg>
+                Google Scholar
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="intro-text">
+        <h1>Hello! I'm <span class="highlight">Kaijing Ma</span></h1>
+
+        <h3>About Me</h3>
+        <p>
+            I recently graduated from <b><span class="highlight">Tongji University</span></b> with a Bachelor's degree in <span class="highlight">Computer Science and Technology</span>. 
+            My name carries the meaning of <i>lush growth and thriving energy</i>, and I am naturally <span class="highlight">cheerful</span>, <span class="highlight">optimistic</span>, and <span class="highlight">curious</span>. 
+            I love exploring diverse facets of life — from arts and literature to hands-on experiments, tinkering with robots, and building quirky projects for fun. 
+            I am always eager to embrace new challenges and learn through both collaborative teamwork and self-driven exploration.
+        </p>
+
+
+        <h3>Research Interests</h3>
+        <p>My research vision focuses on transforming the abstract concept of  <b><span class="highlight">"intelligence"</span></b> into engineering systems that are <span class="highlight">constructible</span>, <span class="highlight">measurable</span>, and <span class="highlight">explainable</span>. 
+        Specifically, my research interests include:</p>
+        <ul>
+            <li><b class="highlight">Natural Language Processing (NLP)</b> — studying language understanding and generation with large-scale models.</li>
+            <li><b class="highlight">Reasoning Capabilities of LLMs</b> — evaluating, enhancing, and systematically improving how LLMs perform logical and multi-step reasoning.</li>
+            <li><b class="highlight">Mechanistic Interpretability</b> — uncovering the underlying mechanisms behind LLM reasoning processes.</li>
+            <li><b class="highlight">AI Safety</b> — designing methods to ensure robust, safe, and aligned AI behavior.</li>
+            <li><b class="highlight">Embodied Intelligence</b> — exploring how AI can interact with and learn from physical environments and robotics systems.</li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- ====================== EDUCATION ======================= -->
+<h2>Education</h2>
+
+<div class="info-block">
+    <div class="info-title">Tongji University</div>
+    <div class="info-sub">B.S. in Computer Science · 2021–2025</div>
+</div>
+
+
+<!-- ====================== RESEARCH & EXPERIENCE ======================= -->
+<h2>Research Experience</h2>
+
+<div class="exp-grid">
+
+    <!-- ByteDance -->
+    <div class="exp-row">
+        <div class="exp-text">
+            <div class="exp-title">ByteDance — LLM Research Intern</div>
+            <div class="exp-time">May 2025 – Oct 2025</div>
+            <p>
+                Worked on formal reasoning and automated theorem proving with large language models (LLMs), constructing large datasets for reasoning experiments and evaluation.
+            </p>
+        </div>
+    </div>
+
+    <!-- MIT CSAIL -->
+    <div class="exp-row">
+        <div class="exp-text">
+            <div class="exp-title">MIT CSAIL — Intern, advised by Prof. Wojciech Matusik</div>
+            <div class="exp-time">Jun 2025 – Present</div>
+            <p>
+                Developed MusicDSL, a domain-specific language for musical structure, and built middleware connecting DAWs with AI models.
+            </p>
+        </div>
+    </div>
+
+    <!-- MAP Lab -->
+    <div class="exp-row">
+        <div class="exp-text">
+            <div class="exp-title">
+                MAP Open Source Community 
+                <a href="https://huggingface.co/m-a-p" target="_blank" class="pub-btn" style="margin-left:10px" >Link</a>
+            </div>
+
+            <div class="exp-time">Oct 2023 – Present</div>
+            <p>
+                Focused on designing benchmarks and evaluation tools to systematically assess model reasoning capabilities, and authored detailed research reports supporting team projects and analyses.
+            </p>
+        </div>
+    </div>
+
+    <!-- Shanghai Institute for Intelligent Autonomous Systems -->
+    <div class="exp-row">
+        <div class="exp-text">
+            <div class="exp-title">Shanghai Institute for Intelligent Autonomous Systems — Research Assistant
+                <a href="https://srias.tongji.edu.cn/" target="_blank" class="pub-btn" style="margin-left:10px" >Link</a>
+            </div>
+            <div class="exp-time">Jun 2022 – Sep 2023</div>
+            <p>
+                Developed cloud–edge pedestrian re-identification algorithms, implemented multi-level clustering methods, and authored patents.
+            </p>
+        </div>
+    </div>
+
+    <!-- SPAR Project -->
+    <div class="exp-row">
+        <div class="exp-text">
+            <div class="exp-title">SPAR Project — Mentee
+                <a href="https://sparai.org/" target="_blank" class="pub-btn" style="margin-left:10px" >Link</a>
+            </div>
+            <div class="exp-time">Feb 2024 – Jun 2024</div>
+            <p>
+                Implemented a secure steganography system integrating iMEC and GPT-2.
+            </p>
+        </div>
+    </div>
+
+    <!-- AI Safety Hungary Technical Course -->
+    <div class="exp-row">
+        <div class="exp-text">
+            <div class="exp-title">AI Safety Hungary Technical Course — Trainee
+                <a href="https://www.aishungary.com/" target="_blank" class="pub-btn" style="margin-left:10px">Link</a>
+            </div>
+            <div class="exp-time">Feb 2024 – Apr 2024</div>
+            <p>
+                Studied AI alignment and safety through technical readings and group discussions.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<h2>Other Experience</h2>
+
+<div class="other-exp-grid">
+    <div class="other-exp-card">
+        <div class="other-exp-header">
+            <div>
+                <div class="other-exp-title">
+                    VEX Robotics Laboratory, Tongji University — Program Team Leader
+                </div>
+                <div class="other-exp-time">
+                    Oct 2022 – Dec 2023
+                </div>
+            </div>
+            <div class="other-exp-links">
+                <a href="https://github.com/TongJiVex" target="_blank">Lab GitHub</a>
+                <a href="https://github.com/TongJiVexProgramGroup" target="_blank">Program GitHub</a>
+                <a href="https://www.bilibili.com/video/BV11q421w7JQ/?spm_id_from=333.1387.homepage.video_card.click&vd_source=35a8366f91f3ef012a5bcf44aaefceca" target="_blank">Videos</a>
+                <a href="https://tongjivex.github.io/2022-2023_TJU_Engineering_Notebook/" target="_blank">Engineering Notes</a>
+            </div>
+        </div>
+        <ul>
+            Led the development of the <b>tjulib</b> library, overseeing design and coding of its functionality.
+            and implemented an omni-directional octagonal chassis design and odometry algorithm for full-field positioning.
+        </ul>
+    </div>
+</div>
+
+<!-- ====================== PUBLICATIONS ======================= -->
+<h2>Publications</h2>
+<p style="font-size:0.9em; color: #555;">
+    Listed in reverse chronological order (most recent first)
+</p>
+<div class="pub-grid">
+
+    <div class="pub-card">
+        <div class="pub-title">Scaling Latent Reasoning via Looped Language Models</div>
+        <div class="pub-venue">Mechanistic Interpretability</div>
+        <div class="pub-links">
+            <a href="http://ouro-llm.github.io/" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2510.25741" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+
+    <div class="pub-card">
+        <div class="pub-title">Criticlean: Critic-guided reinforcement learning for mathematical formalization</div>
+        <div class="pub-venue">Co-author</div>
+        <div class="pub-links">
+            <a href="https://github.com/multimodal-art-projection/CriticLean" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2507.06181" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">Seed-Prover: Deep and broad reasoning for automated theorem proving</div>
+        <div class="pub-venue">Data Support</div>
+        <div class="pub-links">
+            <a href="https://github.com/ByteDance-Seed/Seed-Prover" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2507.23726" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">KORGym: A Dynamic Game Platform for LLM Reasoning Evaluation</div>
+        <div class="pub-venue">NeurIPS 2025 Spotlight • Game Support</div>
+        <div class="pub-links">
+            <a href="https://github.com/multimodal-art-projection/KORGym" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2505.14552" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines</div>
+        <div class="pub-venue">NeurIPS 2025 • Leading Author</div>
+        <div class="pub-links">
+            <a href="https://supergpqa.github.io/" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2502.14739" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">KOR-Bench: Benchmarking Language Models on Knowledge-Orthogonal Reasoning Tasks</div>
+        <div class="pub-venue">ICLR 2025 • First Author</div>
+        <div class="pub-links">
+            <a href="https://kor-bench.github.io/" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2410.06526" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">KARPA: A Training-free Method of Adapting Knowledge Graph as References for LLM’s Reasoning Path Aggregation</div>
+        <div class="pub-venue">ACL Findings 2025 • Second Author</div>
+        <div class="pub-links">
+            <a href="https://github.com/Icamd/KARPA" target="_blank" class="pub-btn">Website</a>
+            <a href="https://aclanthology.org/2025.findings-acl.1269.pdf" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">CodeEditorBench: Evaluating Code Editing Capability of Large Language Models</div>
+        <div class="pub-venue">ICLR 2025 DL4C • Co-author</div>
+        <div class="pub-links">
+            <a href="https://codeeditorbench.github.io/" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2404.03543" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">SciMMIR: Benchmarking Scientific Multi-modal Information Retrieval</div>
+        <div class="pub-links">
+            <a href="https://github.com/Wusiwei0410/SciMMIR" target="_blank" class="pub-btn">Website</a>
+            <a href="https://aclanthology.org/2024.findings-acl.746.pdf" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-card">
+        <div class="pub-title">MAP-Neo: Highly Capable and Transparent Bilingual Large Language Model Series</div>
+        <div class="pub-venue">Data Pipeline</div>
+        <div class="pub-links">
+            <a href="https://map-neo.github.io/" target="_blank" class="pub-btn">Website</a>
+            <a href="https://arxiv.org/pdf/2405.19327" target="_blank" class="pub-btn">PDF</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<h2>Ongoing Long-term Project</h2>
+
+<div class="exp-row">
+    <div class="exp-text">
+        <div class="exp-title">
+            OpSynth-MI — Operator Synthesis for Mechanistic Interpretability
+            <a href="https://github.com/opulse-exp/op_plus" target="_blank" class="pub-btn"  style="margin-left:16px;">GitHub</a>
+        </div>
+        <div class="exp-time">2025 – Present</div>
+        <p>
+            Developing tools to analyze and interpret the internal mechanisms of LLMs through operator synthesis, aiming to improve model transparency and reasoning understanding.
+        </p>
+    </div>
+</div>
+
+
+<!-- ====================== AWARDS ======================= -->
+<h2>Competition Awards</h2>
+
+<div class="info-card">
+    <p><b>Excellence Award</b> — 2023 CCF Robotics Large Model Competition</p>
+    <p><b>First Prize</b> — AI for Brain Science Collegiate Challenge</p>
+    <p><b>First Prize</b> — Shanghai Female Innovation Competition</p>
+    <p><b>4th Place</b> — VEX Robotics World Championships</p>
+    <p><b>Design Award</b> — China Robotics Creativity Competition</p>
+</div>
+
+<!-- ====================== SKILLS ======================= -->
+<h2>Languages & Skills</h2>
+
+<div class="info-card">
+    <p><b>Languages:</b> Chinese (Native) | English (Fluent)</p>
+    <p><b>Programming:</b> Python, C/C++, Verilog, JavaScript, HTML/CSS, Assembly</p>
+    <p><b>Machine Learning & Deep Learning:</b> PyTorch, TensorFlow, HuggingFace Transformers</p>
+    <p><b>Large Language Models:</b> Megatron-LM, vLLM, LLaMA-Factory (SFT), VERL (RL), NNSight (Interpretability), Ray (Distributed)</p>
+    <p><b>Robotics & Simulation:</b> Mechanical Assembly, SolidWorks, 3D Printing, ROS, Sensors, Basic Control</p>
+</div>
+
+
+<footer>
+    © 2025 Kaijing Ma
+</footer>
+
+</body>
+</html>
