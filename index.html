@@ -108,6 +108,17 @@
 
 <div class="exp-grid">
 
+
+    <!-- Stepfun -->
+    <div class="exp-row">
+        <div class="exp-text">
+            <div class="exp-title">Stepfun — Large Model Pretraining Algorithm Intern</div>
+            <div class="exp-time">Dec 2025 – Present</div>
+            <p>
+                Working on pretraining algorithms for large-scale models, focusing on optimization, data pipeline design, and scaling model training for enhanced performance and efficiency.
+            </p>
+        </div>
+    </div>
     <!-- ByteDance -->
     <div class="exp-row">
         <div class="exp-text">
@@ -134,7 +145,7 @@
     <div class="exp-row">
         <div class="exp-text">
             <div class="exp-title">
-                MAP Open Source Community 
+                MAP Open Source Community — Intern
                 <a href="https://huggingface.co/m-a-p" target="_blank" class="pub-btn" style="margin-left:10px" >Link</a>
             </div>
 
@@ -324,12 +335,86 @@
         </div>
         <div class="exp-time">2025 – Present</div>
         <p>
-            Developing tools to analyze and interpret the internal mechanisms of LLMs through operator synthesis, aiming to improve model transparency and reasoning understanding.
+            Using newly defined operators to continuously simulate declarative and procedural knowledge from cognitive psychology, explicitly modeling the dependencies between different knowledge types and performing combinatorial operations to explore their interactions and integration. This approach aims to analyze and interpret the internal mechanisms of large language models, enhancing model transparency and reasoning understanding.
         </p>
     </div>
 </div>
 
 
+<!-- ====================== RESEARCH VISION & CONCEPT MAPS ======================= -->
+<h2>Research Vision & Concept Maps</h2>
+<p style="font-size:0.9em; color:#555;">
+    A collection of selected visual summaries of my research ideas, conceptual frameworks, and long-term directions.
+</p>
+
+<div class="research-carousel">
+    <div class="slides">
+        <div class="slide">
+            <img src="assets/overview_01.png" alt="Reasoning Roadmap" class="slide-img" onclick="openLightbox(this)">
+            <div class="caption">Figure 1: Toward Deeper, Longer, and More Reliable Reasoning: Theory, Mechanisms, and Training Paradigms</div>
+            <div class="description">
+                This roadmap proposes a systematic framework for advancing AI reasoning via reproducible and interpretable patterns. A methodological loop—“theory → mechanism → training → feedback”—integrates abstract reasoning, mechanism analysis, and training design. Experimentally, a complementary cycle of clean and chaotic data tests capabilities, guides architecture, and drives iterative improvement. Together, these cycles enhance model reasoning in a controlled, interpretable, and reproducible manner, shifting research from engineering-driven practice toward foundational science.
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="assets/overview_02.png" alt="Research Framework" class="slide-img" onclick="openLightbox(this)">
+            <div class="caption">Figure 2: Wiser Agent, Wider World: Customizing the World for Agent Growth</div>
+            <div class="description">
+                This framework illustrates tiered agent training guided by WorldGPT, where synthetic environments are progressively adapted to the agent's skill level. A scheduler sets objectives, generates multimodal data, and iteratively refines both agent behavior and environment complexity, enabling continuous capability enhancement through feedback loops.
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="assets/overview_03.png" alt="LLM-Empowered Embodied Intelligence" class="slide-img" onclick="openLightbox(this)">
+            <div class="caption">Figure 3: LLM-Empowered Embodied Intelligence for Physical Interaction</div>
+            <div class="description">
+                This study addresses the semantic gap between physical multimodal data and LLM reasoning in embodied intelligence. We propose a framework that converts sensor data into LLM-interpretable formats, integrates physical rules, and constructs a task-specific reasoning library for single and multi-agent scenarios. A feedback-based mechanism iteratively refines LLM reasoning using execution outcomes, aiming to improve task success rates in complex, dynamic environments by over 25%.
+            </div>
+        </div>
+    </div>
+
+    <div class="dots-container">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="">
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let current = 0;
+
+function showSlide(index) {
+    slides.forEach((s, i) => s.style.display = i === index ? 'flex' : 'none');
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    current = index;
+}
+
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+});
+
+// 初始化显示第一张
+showSlide(0);
+
+function openLightbox(img) {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
+</script>
 <!-- ====================== AWARDS ======================= -->
 <h2>Competition Awards</h2>
 

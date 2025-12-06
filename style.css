@@ -469,3 +469,80 @@ body::after {
 .project-links a.pub-btn {
     margin-right: 10px;
 }
+
+.research-carousel {
+    max-width: 900px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.slides {
+    position: relative;
+}
+
+.slide {
+    display: none;
+    flex-direction: column;
+    background: #111722;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.caption {
+    font-weight: bold;
+    color: #6ea8ff;;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #fff;
+}
+
+
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
