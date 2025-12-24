@@ -5,6 +5,51 @@
     <title>Kaijing Ma | Homepage</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    function updateDynamicTimeline() {
+        const startDate = new Date(2022, 0, 1); // 时间轴起点：2022年1月
+        const endDate = new Date(2026, 0, 1);   // 时间轴终点：2026年1月
+        const today = new Date();
+
+        // 1. 计算总分钟数和已过去分钟数（比按月算更精确）
+        const totalDuration = endDate - startDate;
+        const elapsed = today - startDate;
+        
+        // 计算百分比位置
+        let scrollPercent = (elapsed / totalDuration) * 100;
+        if (scrollPercent > 100) scrollPercent = 100; // 封顶到2026年
+        if (scrollPercent < 0) scrollPercent = 0;
+
+        // 2. 更新 Today 线的位置
+        const todayLine = document.getElementById('todayLine');
+        const todayLabel = document.getElementById('todayLabel');
+        if (todayLine) {
+            todayLine.style.left = scrollPercent + '%';
+            
+            // 更新标签文字，例如 "Today (Dec 2025)"
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            todayLabel.innerText = `Today (${monthNames[today.getMonth()]} ${today.getFullYear()})`;
+        }
+
+        // 3. 自动调整所有标记为 .auto-width 的进行中经历条
+        const autoBars = document.querySelectorAll('.auto-width');
+        autoBars.forEach(bar => {
+            const startYear = parseInt(bar.getAttribute('data-start-year'));
+            const startMonth = parseInt(bar.getAttribute('data-start-month')) - 1; // JS月份从0开始
+            const barStartDate = new Date(startYear, startMonth, 1);
+            
+            const barStartElapsed = barStartDate - startDate;
+            const barStartPercent = (barStartElapsed / totalDuration) * 100;
+            
+            // 设置起点和宽度
+            bar.style.left = barStartPercent + '%';
+            bar.style.width = (scrollPercent - barStartPercent) + '%';
+        });
+    }
+
+    // 页面加载和时间变化时运行
+    window.onload = updateDynamicTimeline;
+</script>
 <body>
 
 <!-- ====================== PARTICLE BACKGROUND ======================= -->
@@ -93,15 +138,123 @@
 
 </div>
 
-
 <!-- ====================== EDUCATION ======================= -->
 <h2>Education</h2>
 
 <div class="info-block">
-    <div class="info-title">Tongji University</div>
+    <div class="info-title">Tongji University
+        <a href="https://www.tongji.edu.cn/eng/index.htm" target="_blank" class="pub-btn" style="margin-left:10px" >Link</a>
+    </div>
     <div class="info-sub">B.S. in Computer Science · 2021–2025</div>
 </div>
 
+<!-- ====================== PERSONAL DEVELOPMENT TIMELINE ======================= -->
+<section class="cyber-timeline-section">
+    <h2>Personal Development Timeline</h2>
+
+    <!-- 顶部进度指示器 -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="timelineProgress"></div>
+    </div>
+
+    <!-- 滚动查看器 -->
+    <div class="timeline-scroll-viewer" id="timelineViewer">
+        <div class="timeline-canvas">
+            
+            <!-- 今天标记线 (由 JS 自动定位) -->
+            <div class="today-line" id="todayLine">
+                <span class="today-label" id="todayLabel">Today</span>
+            </div>
+
+            <!-- 背景年份刻度 -->
+            <div class="year-markers">
+                <div class="year-mark"><span>2022</span></div>
+                <div class="year-mark"><span>2023</span></div>
+                <div class="year-mark"><span>2024</span></div>
+                <div class="year-mark"><span>2025</span></div>
+                <div class="year-mark"><span>2026</span></div>
+            </div>
+
+            <!-- 经历轨道 -->
+            <div class="experience-tracks">
+                
+                <!-- Track 1: 长期的学术积累 -->
+                <div class="track-row">
+                    <!-- MAP: 2023.10 开始，持续至今 -->
+                    <div class="exp-bar ongoing auto-width" data-start-year="2023" data-start-month="10">
+                        <div class="bar-content">
+                            <span class="bar-title">MAP Open Source Community</span>
+                            <span class="bar-tag">Reasoning Benchmarks (KOR-Bench, SuperGPQA)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2: 视觉、交叉与前沿 -->
+                <div class="track-row">
+                    <!-- SRIAS: 2022.06 - 2023.09 (静态宽度) -->
+                    <div class="exp-bar" style="left: 10.4%; width: 31.3%;">
+                        <div class="bar-content">
+                            <span class="bar-title">SRIAS (Tongji)</span>
+                            <span class="bar-tag">Pedestrian Re-ID & Cloud-Edge Algorithms</span>
+                        </div>
+                    </div>
+                    <!-- SPAR: 2024.02 - 2024.06 -->
+                    <div class="exp-bar" style="left: 52%; width: 8.3%;">
+                        <div class="bar-content">
+                            <span class="bar-title">SPAR Project</span>
+                            <span class="bar-tag">AI Safety & Steganography (GPT-2)</span>
+                        </div>
+                    </div>
+                    <!-- MIT: 2025.06 开始，持续至今 -->
+                    <div class="exp-bar ongoing auto-width" data-start-year="2025" data-start-month="6">
+                        <div class="bar-content">
+                            <span class="bar-title">MIT CSAIL (Remote)</span>
+                            <span class="bar-tag">MusicDSL & Computational Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 3: 逻辑推理与解释性 -->
+                <div class="track-row">
+                    <!-- VEX: 2022.10 - 2023.12 -->
+                    <div class="exp-bar" style="left: 18.7%; width: 29.2%;">
+                        <div class="bar-content">
+                            <span class="bar-title">VEX Robotics Team Leader</span>
+                            <span class="bar-tag">Tjulib Library & Odometry Positioning</span>
+                        </div>
+                    </div>
+                    <!-- AI Safety Hungary: 2024.02 - 2024.04 -->
+                    <div class="exp-bar" style="left: 52%; width: 4.2%;">
+                        <div class="bar-content">
+                            <span class="bar-title">AI Safety Hungary</span>
+                            <span class="bar-tag">Alignment Trainee</span>
+                        </div>
+                    </div>
+                    <!-- ByteDance: 2025.05 - 2025.10 -->
+                    <div class="exp-bar" style="left: 81.2%; width: 12.5%;">
+                        <div class="bar-content">
+                            <span class="bar-title">ByteDance Intern</span>
+                            <span class="bar-tag">Formal Reasoning (Lean 4) & Mech Interp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 4: 工业界大规模训练 -->
+                <div class="track-row">
+                     <!-- Stepfun: 2025.12 开始，持续至今 -->
+                     <div class="exp-bar ongoing auto-width current-task" data-start-year="2025" data-start-month="12">
+                        <div class="bar-content">
+                            <span class="bar-title">Stepfun</span>
+                            <span class="bar-tag">LLM Pretrain</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End tracks -->
+        </div> <!-- End canvas -->
+    </div> <!-- End viewer -->
+    <p class="scroll-hint">← Drag to scroll | Updates automatically based on current date →</p>
+</section>
 
 <!-- ====================== RESEARCH & EXPERIENCE ======================= -->
 <h2>Research Experience</h2>
@@ -112,7 +265,9 @@
     <!-- Stepfun -->
     <div class="exp-row">
         <div class="exp-text">
-            <div class="exp-title">Stepfun — Large Model Pretraining Algorithm Intern</div>
+            <div class="exp-title">Stepfun — LLM Pretrain Intern
+                <a href="https://platform.stepfun.com/" target="_blank" class="pub-btn" style="margin-left:10px" >Link</a>
+            </div>
             <div class="exp-time">Dec 2025 – Present</div>
             <p>
                 Working on pretraining algorithms for large-scale models, focusing on optimization, data pipeline design, and scaling model training for enhanced performance and efficiency.
@@ -122,7 +277,15 @@
     <!-- ByteDance -->
     <div class="exp-row">
         <div class="exp-text">
-            <div class="exp-title">ByteDance — LLM Research Intern</div>
+            <div class="exp-title">
+                ByteDance — LLM Research Intern
+                <a href="https://seed.bytedance.com/en/" target="_blank" class="pub-btn" style="margin-left:10px">Link</a>
+            </div>
+            <div class="advisor-block">
+                <span class="advisor-prefix">Advised by </span>
+                <a href="https://scholar.google.com/citations?user=OdE3MsQAAAAJ&hl=en" target="_blank" class="advisor-badge">Dr. Wenhao Huang</a>
+                <a href="https://scholar.google.com/citations?user=qyTrq4kAAAAJ&hl=en" target="_blank" class="advisor-badge">Dr. Ge Zhang</a>
+            </div>
             <div class="exp-time">May 2025 – Oct 2025</div>
             <p>
                 Worked on formal reasoning and automated theorem proving with large language models (LLMs), constructing large datasets for reasoning experiments and evaluation.
@@ -133,7 +296,17 @@
     <!-- MIT CSAIL -->
     <div class="exp-row">
         <div class="exp-text">
-            <div class="exp-title">MIT CSAIL — Intern, advised by Prof. Wojciech Matusik</div>
+            <div class="exp-title">
+                MIT CSAIL CDFG — Research Intern
+                <a href="https://cdfg.csail.mit.edu/team" target="_blank" class="pub-btn" style="margin-left:10px">Link</a>
+            </div>
+            <div class="advisor-block">
+                <span>Advised by </span>
+                <a href="https://scholar.google.com/citations?hl=en&user=wbIMbL8AAAAJ" target="_blank" class="advisor-badge">
+                    Prof. Wojciech Matusik
+                </a>
+                <span class="advisor-remote">(Remote)</span>
+            </div>            
             <div class="exp-time">Jun 2025 – Present</div>
             <p>
                 Developed MusicDSL, a domain-specific language for musical structure, and built middleware connecting DAWs with AI models.
@@ -146,7 +319,13 @@
         <div class="exp-text">
             <div class="exp-title">
                 MAP Open Source Community — Intern
-                <a href="https://huggingface.co/m-a-p" target="_blank" class="pub-btn" style="margin-left:10px" >Link</a>
+                <a href="https://huggingface.co/m-a-p" target="_blank" class="pub-btn" style="margin-left:10px">Link</a>
+            </div>
+
+            <div class="advisor-block">
+                <span class="advisor-prefix">Advised by </span>
+                <a href="https://scholar.google.com/citations?user=qyTrq4kAAAAJ&hl=en" target="_blank" class="advisor-badge">Dr. Ge Zhang</a>
+                <span>& other community mentors</span>
             </div>
 
             <div class="exp-time">Oct 2023 – Present</div>
@@ -181,12 +360,16 @@
             </p>
         </div>
     </div>
+    
 
     <!-- AI Safety Hungary Technical Course -->
     <div class="exp-row">
         <div class="exp-text">
-            <div class="exp-title">AI Safety Hungary Technical Course — Trainee
-                <a href="https://www.aishungary.com/" target="_blank" class="pub-btn" style="margin-left:10px">Link</a>
+            <div class="exp-title" style="display:flex; align-items:center; gap:10px; flex-wrap:nowrap;">
+                <span style="flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                    AI Safety Hungary Technical Course — Trainee
+                </span>
+                <a href="https://www.aishungary.com/" target="_blank" class="pub-btn">Link</a>
             </div>
             <div class="exp-time">Feb 2024 – Apr 2024</div>
             <p>
@@ -240,9 +423,9 @@
     </div>
 
 
-    <div class="pub-card">
+    <div class="pub-card first-author">
         <div class="pub-title">Criticlean: Critic-guided reinforcement learning for mathematical formalization</div>
-        <div class="pub-venue">Co-author</div>
+        <div class="pub-venue">Co-First Author</div>
         <div class="pub-links">
             <a href="https://github.com/multimodal-art-projection/CriticLean" target="_blank" class="pub-btn">Website</a>
             <a href="https://arxiv.org/pdf/2507.06181" target="_blank" class="pub-btn">PDF</a>
@@ -267,7 +450,7 @@
         </div>
     </div>
 
-    <div class="pub-card">
+    <div class="pub-card first-author">
         <div class="pub-title">SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines</div>
         <div class="pub-venue">NeurIPS 2025 • Leading Author</div>
         <div class="pub-links">
@@ -276,7 +459,7 @@
         </div>
     </div>
 
-    <div class="pub-card">
+    <div class="pub-card first-author">
         <div class="pub-title">KOR-Bench: Benchmarking Language Models on Knowledge-Orthogonal Reasoning Tasks</div>
         <div class="pub-venue">ICLR 2025 • First Author</div>
         <div class="pub-links">
@@ -294,9 +477,9 @@
         </div>
     </div>
 
-    <div class="pub-card">
+    <div class="pub-card first-author">
         <div class="pub-title">CodeEditorBench: Evaluating Code Editing Capability of Large Language Models</div>
-        <div class="pub-venue">ICLR 2025 DL4C • Co-author</div>
+        <div class="pub-venue">ICLR 2025 DL4C • Co-First Author</div>
         <div class="pub-links">
             <a href="https://codeeditorbench.github.io/" target="_blank" class="pub-btn">Website</a>
             <a href="https://arxiv.org/pdf/2404.03543" target="_blank" class="pub-btn">PDF</a>
@@ -425,6 +608,21 @@ function closeLightbox() {
     <p><b>4th Place</b> — 2023 VEX Robotics World Championships VEX U Design Division</p>
     <p><b>Design Award</b> — 2023 China University Students Intelligent Robot Creativity Competition</p>
 </div>
+
+<div class="info-card">
+    <p>
+        <b>Excellence Award</b> — 2023 CCF Software Conference Robotics Large Model and Embodied Intelligence Competition
+        <a href="https://chinasoft.ccf.org.cn/2023/notice/Robot.html" target="_blank" class="pub-btn" style="margin-left:10px">Link</a>
+    </p>
+    <p><b>First Prize</b> — Professional Track 1, 2023 AI for Brain Science Collegiate Challenge</p>
+    <p><b>First Prize</b> — Creative Group, 2023 Shanghai Female Student Innovation and Entrepreneurship Competition</p>
+    <p>
+        <b>4th Place</b> — 2023 VEX Robotics World Championships VEX U Design Division
+        <a href="https://recf.org/vex-robotics-world-championship/" target="_blank" class="pub-btn" style="margin-left:10px">Link</a>
+    </p>
+    <p><b>Design Award</b> — 2023 China University Students Intelligent Robot Creativity Competition</p>
+</div>
+
 
 <!-- ====================== SKILLS ======================= -->
 <h2>Languages & Skills</h2>
