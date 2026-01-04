@@ -775,6 +775,7 @@ body::after {
 .timeline-canvas {
     padding-bottom: 30px; /* 增加底部间距，让内容和滚动条有呼吸感 */
 }
+
 .other-exp-images {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
